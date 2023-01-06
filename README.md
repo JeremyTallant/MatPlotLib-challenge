@@ -1,5 +1,7 @@
 # MatPlotLib Challenge
 
+![image](https://user-images.githubusercontent.com/112406455/210905367-d528947b-4897-49ae-a416-82545974dc63.png)
+
 ## Background
 You've just joined Pymaceuticals, Inc., a new pharmaceutical company that specializes in anti-cancer medications. Recently, it began screening for potential treatments for squamous cell carcinoma (SCC), a commonly occurring form of skin cancer.
 
