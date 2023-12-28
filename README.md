@@ -4,7 +4,8 @@
 
 ## Background
 Pymaceuticals, Inc., a pioneering pharmaceutical company, has recently embarked on a crucial study focusing on squamous cell carcinoma (SCC), a common form of skin cancer. In their latest animal study, they explored the efficacy of various drug regimens, including their primary drug, Capomulin, on 249 mice with SCC tumors over a 45-day period. As a senior data analyst, my role involves analyzing this extensive data to compare the performance of Capomulin against other treatments and providing comprehensive insights through tables, figures, and a summary of the study results. This study is a significant step in Pymaceuticals' mission to advance cancer treatment and improve patient outcomes.
-## Objective 
+## Objective
+This project aims to meticulously analyze and visualize data from Pymaceuticals, Inc.'s recent squamous cell carcinoma treatment study, leveraging Python, Pandas, and Matplotlib. The key objectives, essential for providing insightful conclusions, are outlined as follows: 
 ### 1. **Prepare the Data**
 * Execute package dependencies and data imports.
 * Merge the `mouse_metadata` and `study_results` DataFrames.
