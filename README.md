@@ -203,4 +203,5 @@ plt.ylabel('Sex')
 # Display the plot
 plt.show()
 ```
-The same pie chart is created using Matplotlib's `pyplot`.     
+The same pie chart is created using Matplotlib's `pyplot`. 
+### Quartiles, Outliers, and Box Plot Analysis    
