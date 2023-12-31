@@ -204,4 +204,16 @@ plt.ylabel('Sex')
 plt.show()
 ```
 The same pie chart is created using Matplotlib's `pyplot`. 
-### Quartiles, Outliers, and Box Plot Analysis    
+### Quartiles, Outliers, and Box Plot Analysis
+#### Final Tumor Volume Calculation for Select Treatments
+```python
+# Calculate the final tumor volume of each mouse across four of the treatment regimens:  
+# Capomulin, Ramicane, Infubinol, and Ceftamin
+
+# Start by getting the last (greatest) timepoint for each mouse
+last_timepoint = clean_df.groupby('Mouse ID')['Timepoint'].max().reset_index()
+
+# Merge this group df with the original DataFrame to get the tumor volume at the last timepoint
+merged_df = last_timepoint.merge(clean_df, on=['Mouse ID', 'Timepoint'], how='left')
+```
+Determine the final tumor volume for each mouse in the Capomulin, Ramicane, Infubinol, and Ceftamin regimens by first finding the last timepoint for each mouse and the merging this data with the original DataFrame to obtain tumor volumes at these final timepoints.     
