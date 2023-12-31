@@ -157,7 +157,7 @@ drug_regimen_mice_count = clean_df['Drug Regimen'].value_counts()
 drug_regimen_mice_count.plot(kind='bar', xlabel='Drug Regimen', ylabel='Number of Mice Tested')
 ```
 Counts the number of mice tested for each drug regimen and visualizes the data with a bar plot, using Pandas.
-#### Mice Count per Drug Regimen Plot with Matplotlib
+#### Mice Count per Drug Regimen Plot with Pyplot
 ```python
 # Set up the x-axis values (drug regimen names) and the heights (number of mice)
 x_values = drug_regimen_mice_count.index
@@ -176,4 +176,31 @@ plt.xticks(rotation=90)
 # Display the plot
 plt.show()
 ```
-The same bar plot is created but this time using Matplotlib's `pyplot`.   
+The same bar plot is created but this time using Matplotlib's `pyplot`.
+#### Gender Distribution Pie Chart Using Pandas
+```python
+# Generate a pie plot showing the distribution of female versus male mice using Pandas
+mouse_gender_distribution = clean_df['Sex'].value_counts()
+mouse_gender_distribution.plot(kind='pie', autopct='%1.1f%%')
+
+# Display the plot
+plt.show()
+```
+Create a pie chart to visualize the distribution of female and male mice in the study, using Pandas' built-in plotting capabilities with percentage annotations.
+#### Gender Distribution Pie Chart Using Pyplot
+```python
+# Create labels for the pie chart sections
+labels = mouse_gender_distribution.index
+
+# Define the sizes of each section of the pie chart
+sizes = mouse_gender_distribution.values
+# Generate a pie plot showing the distribution of female versus male mice using pyplot
+plt.pie(sizes, labels=labels, autopct='%1.1f%%')
+
+# Add ylabel
+plt.ylabel('Sex')
+
+# Display the plot
+plt.show()
+```
+The same pie chart is created using Matplotlib's `pyplot`.     
