@@ -216,4 +216,45 @@ last_timepoint = clean_df.groupby('Mouse ID')['Timepoint'].max().reset_index()
 # Merge this group df with the original DataFrame to get the tumor volume at the last timepoint
 merged_df = last_timepoint.merge(clean_df, on=['Mouse ID', 'Timepoint'], how='left')
 ```
-Determine the final tumor volume for each mouse in the Capomulin, Ramicane, Infubinol, and Ceftamin regimens by first finding the last timepoint for each mouse and the merging this data with the original DataFrame to obtain tumor volumes at these final timepoints.     
+Determine the final tumor volume for each mouse in the Capomulin, Ramicane, Infubinol, and Ceftamin regimens by first finding the last timepoint for each mouse and the merging this data with the original DataFrame to obtain tumor volumes at these final timepoints. 
+#### Tumor Volume Analysis for Key Treatments
+```python
+# List of treatments to analyze
+treatment_list = ['Capomulin', 'Ramicane', 'Infubinol', 'Ceftamin']
+
+# Empty list to store tumor volume data 
+tumor_vol_list = []
+
+# Loop over each treatment 
+for treatment in treatment_list:
+    
+    # Locate the rows which contain mice on each drug and get the tumor volumes
+    final_tumor_vol = merged_df.loc[merged_df['Drug Regimen'] == treatment, 'Tumor Volume (mm3)']
+    
+    # Add subset to tumor volume list
+    tumor_vol_list.append(final_tumor_vol)
+    
+    # Calculate the IQR and determine outliers
+    quartiles = final_tumor_vol.quantile([.25, .5, .75])
+    lowerq = quartiles[0.25]
+    upperq = quartiles[0.75]
+    iqr = upperq - lowerq
+    
+    # Determine outliers using upper and lower bounds
+    lower_bound = lowerq - (1.5 * iqr)
+    upper_bound = upperq + (1.5 * iqr)
+    outliers = final_tumor_vol.loc[(final_tumor_vol < lower_bound) | (final_tumor_vol > upper_bound)]
+    
+    print(f"{treatment}'s potential outliers: {outliers}")
+```
+Analyzes tumor volumes for Capomulin, Ramicane, Infubinol, and Ceftamin treatments. This involves calculating tumor volumes, Interquartile Range (IQR), and identifying potential outliers for each treatment, storing the results in a list for further examination.
+#### Box Plot of Tumor Volume by Treatment
+```python
+# Generate a box plot that shows the distrubution of the tumor volume for each treatment group.
+fig1, ax1 = plt.subplots()
+ax1.set_ylabel('Final Tumor Volume (mm3)')
+ax1.boxplot(tumor_vol_list, flierprops=dict(markerfacecolor='red', markersize=12))
+ax1.set_xticklabels(treatment_list)
+plt.show()
+```
+Creates a box plot to visualize the distribution of final tumor volumes across the treatment groups Capomulin, Ramicane, Infubinol, and Ceftamin. The plot highlights potential outliers with red markers for easier identification.      
