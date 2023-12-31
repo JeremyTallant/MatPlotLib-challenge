@@ -276,4 +276,52 @@ plt.title('Capmulin treatment of mouse l509')
 plt.show()
 ```
 Displays the progression of tumor volume over time for mouse l509, treated with Capomulin, using a line plot.
-       
+#### Scatter Plot of Tumor Volume vs. Mouse Weight for Capomulin
+```python
+# Filter the DataFrame for the Capomulin regimen
+capomulin_data = clean_df[clean_df['Drug Regimen'] == 'Capomulin']
+
+# Calculate the average tumor volume for each mouse 
+average_tumor_volume = capomulin_data.groupby('Mouse ID').agg(
+    Average_Tumor_Volume=('Tumor Volume (mm3)', 'mean'),
+    Weight=('Weight (g)', 'mean') 
+)
+
+# Generate a scatter plot of average tumor volume vs. mouse weight for the Capomulin regimen
+plt.scatter(average_tumor_volume['Weight'], average_tumor_volume['Average_Tumor_Volume'])
+
+# Add labels
+plt.xlabel('Weight (g)')
+plt.ylabel('Average Tumor Volume (mm3)')
+
+# Display the plot
+plt.show()
+```
+Presents a scatter plot illustrating the relationship between average tumor volume and mouse weight for mice treated with the Capomulin regimen. 
+### Correlation and Regression Calculation
+#### Correlation and Regression Analysis for Capomulin Treatment
+```python
+# Calculate the Pearson correlation coefficient 
+correlation = st.pearsonr(average_tumor_volume['Weight'], average_tumor_volume['Average_Tumor_Volume'])
+print(f"The correlation between mouse weight and the average tumor volume is {correlation[0]:.2f}")
+
+# Perform linear regression
+(slope, intercept, rvalue, pvalue, stderr) = st.linregress(average_tumor_volume['Weight'], average_tumor_volume['Average_Tumor_Volume'])
+
+# Calculate regression values
+regress_values = average_tumor_volume['Weight'] * slope + intercept
+
+# Create a scatter plot
+plt.scatter(average_tumor_volume['Weight'], average_tumor_volume['Average_Tumor_Volume'])
+
+# Plot the linear model on top of the scatter plot
+plt.plot(average_tumor_volume['Weight'], regress_values, "r-")
+
+# Add labels
+plt.xlabel('Weight (g)')
+plt.ylabel('Average Tumor Volume (mm3)')
+
+# Display the plot
+plt.show()
+```
+Calculates the Pearson correlation coefficient between mouse weight and average tumor volume for Capomulin treatment. It also performs linear regression analysis, plotting the resulting regression line over a scatter plot to visually represent the relationship.        
