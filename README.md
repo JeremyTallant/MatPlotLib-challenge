@@ -146,4 +146,34 @@ A summary statistics table for each drug regimen is created, including mean, med
 # Using the aggregation method, produce the same summary statistics in a single line.
 clean_df.groupby(['Drug Regimen'])[['Tumor Volume (mm3)']].agg(['mean', 'median', 'var', 'std', 'sem'])
 ```
-The same summary statistics table for tumor volume by each drug regimen is created in one line, using the aggregation method to compute mean, median, variance, standard deviation, and SEM. 
+The same summary statistics table for tumor volume by each drug regimen is created in one line, using the aggregation method to compute mean, median, variance, standard deviation, and SEM.
+### Create Bar and Pie Charts
+#### Mice Count per Drug Regimen Plot with Pandas
+```python
+# Count the number of mice tested for each 'Drug Regimen'
+drug_regimen_mice_count = clean_df['Drug Regimen'].value_counts()
+
+# Generate a bar plot showing the number of mice tested for each drug regimen using Pandas.
+drug_regimen_mice_count.plot(kind='bar', xlabel='Drug Regimen', ylabel='Number of Mice Tested')
+```
+Counts the number of mice tested for each drug regimen and visualizes the data with a bar plot, using Pandas.
+#### Mice Count per Drug Regimen Plot with Matplotlib
+```python
+# Set up the x-axis values (drug regimen names) and the heights (number of mice)
+x_values = drug_regimen_mice_count.index
+y_values = drug_regimen_mice_count.values
+
+# Generate a bar plot showing the number of mice tested for each drug regimen using pyplot.
+plt.bar(x_values, y_values)
+
+# Adding labels
+plt.xlabel('Drug Regimen')
+plt.ylabel('Number of Mice Tested')
+
+# Rotate x-axis labels
+plt.xticks(rotation=90)
+
+# Display the plot
+plt.show()
+```
+The same bar plot is created but this time using Matplotlib's `pyplot`.   
