@@ -257,4 +257,23 @@ ax1.boxplot(tumor_vol_list, flierprops=dict(markerfacecolor='red', markersize=12
 ax1.set_xticklabels(treatment_list)
 plt.show()
 ```
-Creates a box plot to visualize the distribution of final tumor volumes across the treatment groups Capomulin, Ramicane, Infubinol, and Ceftamin. The plot highlights potential outliers with red markers for easier identification.      
+Creates a box plot to visualize the distribution of final tumor volumes across the treatment groups Capomulin, Ramicane, Infubinol, and Ceftamin. The plot highlights potential outliers with red markers for easier identification.
+### Line Plot and Scatter Plot Creation
+#### Line Plot for Capomulin Treatment of Mouse l509
+```python
+# Filter the DataFrame for mouse ID l509
+mouse_data = clean_df[clean_df['Mouse ID'] == 'l509']
+
+# Generate a line plot of tumor volume vs. time point for a mouse treated with Capomulin
+plt.plot(mouse_data['Timepoint'], mouse_data['Tumor Volume (mm3)'])
+
+# Add labels and title
+plt.xlabel('Timepoint (days)')
+plt.ylabel('Tumor Volume (mm3)')
+plt.title('Capmulin treatment of mouse l509')
+
+# Display the plot
+plt.show()
+```
+Displays the progression of tumor volume over time for mouse l509, treated with Capomulin, using a line plot.
+       
