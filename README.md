@@ -113,3 +113,37 @@ clean_df['Mouse ID'].nunique()
 ```
 Confirming the count of unique mice in the cleaned DataFrame post-duplication removal.  
 ### Generate Summary Statistics 
+#### Summary Statistics Table Creation
+```python
+# Generate a summary statistics table of mean, median, variance, standard deviation, and SEM of the tumor volume for each regimen
+
+# Use groupby and summary statistical methods to calculate the following properties of each drug regimen: 
+# mean, median, variance, standard deviation, and SEM of the tumor volume. 
+mean = clean_df.groupby(['Drug Regimen'])['Tumor Volume (mm3)'].mean()
+median =  clean_df.groupby(['Drug Regimen'])['Tumor Volume (mm3)'].median()
+variance =  clean_df.groupby(['Drug Regimen'])['Tumor Volume (mm3)'].var()
+std =  clean_df.groupby(['Drug Regimen'])['Tumor Volume (mm3)'].std()
+sem =  clean_df.groupby(['Drug Regimen'])['Tumor Volume (mm3)'].sem()
+
+# Assemble the resulting series into a single summary DataFrame.
+summary_statistics_df = pd.DataFrame({
+    'Mean Tumor Volume': mean,	
+    'Median Tumor Volume': median,	
+    'Tumor Volume Variance': variance,
+    'Tumor Volume Std. Dev.': std,
+    'Tumor Volume Std. Err.': sem
+})
+
+# Display DataFrame
+summary_statistics_df
+```
+A summary statistics table for each drug regimen is created, including mean, median, variance, standard deviation, and SEM of the tumor volume, using grouped data from the clean DataFrame.
+#### Aggregated Summary Statistics Table
+```python
+# Generate a summary statistics table of mean, median, variance, standard deviation, 
+# and SEM of the tumor volume for each regimen
+
+# Using the aggregation method, produce the same summary statistics in a single line.
+clean_df.groupby(['Drug Regimen'])[['Tumor Volume (mm3)']].agg(['mean', 'median', 'var', 'std', 'sem'])
+```
+The same summary statistics table for tumor volume by each drug regimen is created in one line, using the aggregation method to compute mean, median, variance, standard deviation, and SEM. 
