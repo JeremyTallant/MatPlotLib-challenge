@@ -1,6 +1,6 @@
 # SCC Treatment Analysis with Matplotlib
 
-![image](pymaceutical.webp)
+![image](images/pymaceutical.webp)
 
 ## Background
 Pymaceuticals, Inc., a pioneering pharmaceutical company, has recently embarked on a crucial study focusing on squamous cell carcinoma (SCC), a common form of skin cancer. In their latest animal study, they explored the efficacy of various drug regimens, including their primary drug, Capomulin, on 249 mice with SCC tumors over a 45-day period. As a senior data analyst, my role involves analyzing this extensive data to compare the performance of Capomulin against other treatments and providing comprehensive insights through tables, figures, and a summary of the study results. This study is a significant step in Pymaceuticals' mission to advance cancer treatment and improve patient outcomes.
@@ -341,4 +341,17 @@ In this section, we present a focused analysis of Pymaceuticals' study results, 
 | Stelasyn     | 54.233149         | 52.431737           | 59.450562             | 7.710419               | 0.573111               |
 | Zoniferol    | 53.236507         | 51.818479           | 48.533355             | 6.966589               | 0.516398               |
 
-The table provides a comprehensive view of the tumor volume statistics across different drug regimens. Notably, Capomulin and Ramicane show lower mean and median tumor volumes, suggesting more effectiveness in reducing tumor size compared to other treatments.    
+The table provides a comprehensive view of the tumor volume statistics across different drug regimens. Notably, Capomulin and Ramicane show lower mean and median tumor volumes, suggesting more effectiveness in reducing tumor size compared to other treatments.
+### Bar and Pie Charts
+![image](images/barplot.svg)
+
+The bar plot from the study illustrates the number of measurements per drug regimen, with Capomulin and Ramicane standing out due to their higher data points. This suggests a more in-depth evaluation of these drugs, enhancing the reliability of the results. The variation in data points across regimens highlights the importance of sample size in experimental outcomes, emphasizing that robust data collection is key in assessing drug efficacy.
+
+![image](images/piechart.svg)
+
+The pie chart depicts the gender distribution of mice in the study, highlighting the balance between male and female subjects. This is key for ensuring the study's findings are applicable across genders, considering possible sex-specific responses to the drug regimens. The chart underlines the importance of demographic diversity in research, contributing to the study's overall validity and applicability.
+
+
+
+
+    
