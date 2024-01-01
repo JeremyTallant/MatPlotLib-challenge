@@ -324,4 +324,7 @@ plt.ylabel('Average Tumor Volume (mm3)')
 # Display the plot
 plt.show()
 ```
-Calculates the Pearson correlation coefficient between mouse weight and average tumor volume for Capomulin treatment. It also performs linear regression analysis, plotting the resulting regression line over a scatter plot to visually represent the relationship.        
+Calculates the Pearson correlation coefficient between mouse weight and average tumor volume for Capomulin treatment. It also performs linear regression analysis, plotting the resulting regression line over a scatter plot to visually represent the relationship.
+## Final Analysis
+In this section, we present a focused analysis of Pymaceuticals' study results, examining the effectiveness of various drug regimens on tumor reduction. Utilizing statistical summaries and visual data, we assess treatment impacts, scrutinize potential outliers, and explore key correlations. This analysis aims to distill critical insights from the data, providing clear conclusions about the drug efficacies observed in the study.
+        
