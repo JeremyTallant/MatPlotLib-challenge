@@ -351,6 +351,19 @@ The bar plot from the study illustrates the number of measurements per drug regi
 
 The pie chart depicts the gender distribution of mice in the study, highlighting the balance between male and female subjects. This is key for ensuring the study's findings are applicable across genders, considering possible sex-specific responses to the drug regimens. The chart underlines the importance of demographic diversity in research, contributing to the study's overall validity and applicability.
 
+### Quartiles, Outliers, and Box Plot Analysis
+![image](images/boxplot.svg)
+
+The box plot visually compares the distribution of tumor volumes across the different drug regimens in the study. Each box represents a regimen, showing the median, quartiles, and range of tumor volumes. Notably, some regimens, likely Capomulin and Ramicane given the context, show a lower median tumor volume and a more compact interquartile range, suggesting their higher efficacy in tumor reduction. The presence of an outlier in one of the regimens, Infubinol, is a critical observation, indicating an atypical response that may require further investigation. This plot effectively highlights the variability and effectiveness of each treatment, offering a clear, comparative view of their impacts on tumor volume. It's a vital tool for assessing the relative success of the drug regimens and guiding future research directions.
+
+### Line Plot and Scatter Plot
+![image](images/linechart.svg)
+
+The line chart portrays the change in tumor volume over time for a single mouse treated with Capomulin. The x-axis represents time in days, while the y-axis shows the tumor volume in cubic millimeters. The chart demonstrates a clear downward trend, indicating a significant reduction in tumor size as the treatment progresses. This suggests that Capomulin is effective in decreasing tumor volume over the course of the treatment period. The smooth, consistent decline in the line chart is indicative of the drug's steady effectiveness, providing valuable insights into its potential as a viable treatment option.
+
+![image](images/scatter.svg) ​​
+
+
 
 
 
