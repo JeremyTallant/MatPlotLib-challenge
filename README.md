@@ -340,4 +340,5 @@ In this section, we present a focused analysis of Pymaceuticals' study results, 
 | Ramicane     | 40.216745         | 40.673236           | 23.486704             | 4.846308               | 0.320955               |
 | Stelasyn     | 54.233149         | 52.431737           | 59.450562             | 7.710419               | 0.573111               |
 | Zoniferol    | 53.236507         | 51.818479           | 48.533355             | 6.966589               | 0.516398               |
+
 The table provides a comprehensive view of the tumor volume statistics across different drug regimens. Notably, Capomulin and Ramicane show lower mean and median tumor volumes, suggesting more effectiveness in reducing tumor size compared to other treatments.    
