@@ -365,7 +365,10 @@ The line chart portrays the change in tumor volume over time for a single mouse 
 
 The scatter plot illustrates the relationship between mouse weight and tumor volume for the Capomulin treatment regimen. Each point on the plot represents an individual mouse, with its weight on the x-axis and tumor volume on the y-axis. The plot shows a positive correlation between mouse weight and tumor volume – as the weight of the mouse increases, the tumor volume also tends to increase. This suggests that heavier mice might have larger tumors, indicating a potential relationship between body weight and tumor growth under this treatment. Such a correlation is crucial for understanding how different physiological factors, like body weight, can influence the effectiveness of a treatment. This plot aids in identifying variables that might need to be controlled or accounted for in future studies to ensure more accurate and targeted treatment approaches.
 
+### Correlation and Regression
 
+![image](images/correlation.svg)
 
+The scatter plot, which shows the relationship between mouse weight and average tumor volume, is accompanied by a correlation coefficient of 0.84, indicating a strong positive correlation. This high correlation coefficient is reinforced by the regression line plotted on the chart. The regression line demonstrates a clear upward trend, further confirming that as the mouse weight increases, there is a significant increase in the average tumor volume. This line provides a visual representation of the average increase in tumor volume for each unit increase in weight. The presence of this regression line, combined with the high correlation coefficient, underscores a robust and consistent relationship between these two variables. This strong linear relationship is essential for understanding the significant impact of physiological characteristics, like weight, on tumor growth, and it plays a crucial role in interpreting the effectiveness of the treatment regimens in the context of varying mouse weights.
 
     
